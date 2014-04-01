@@ -1134,7 +1134,7 @@ int MAPISysTimetoDTR(BYTE *data, dtr *thedate)
     thedate->wDayOfWeek = (tmp_date + startingdate) % 7;
     thedate->wMonth = 0;
 
-    while (tmp_date > months[thedate->wMonth]) {
+    while (tmp_date >= months[thedate->wMonth]) {
         tmp_date -= months[thedate->wMonth];
         thedate->wMonth++;
     }

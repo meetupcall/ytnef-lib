@@ -13,12 +13,12 @@
 # PARTICULAR PURPOSE.
 
 
-SHELL = /bin/bash
+SHELL = /bin/sh
 
 srcdir = .
 top_srcdir = .
 
-prefix = /usr
+prefix = /usr/local
 exec_prefix = ${prefix}
 
 bindir = ${exec_prefix}/bin
@@ -38,10 +38,10 @@ pkglibdir = $(libdir)/libytnef
 pkgincludedir = $(includedir)/libytnef
 top_builddir = .
 
-ACLOCAL = ${SHELL} /vagrant/libytnef-1.5/missing --run aclocal-1.6
-AUTOCONF = ${SHELL} /vagrant/libytnef-1.5/missing --run autoconf
-AUTOMAKE = ${SHELL} /vagrant/libytnef-1.5/missing --run automake-1.6
-AUTOHEADER = ${SHELL} /vagrant/libytnef-1.5/missing --run autoheader
+ACLOCAL = ${SHELL} /Users/simon/ytnef-lib/missing --run aclocal-1.6
+AUTOCONF = ${SHELL} /Users/simon/ytnef-lib/missing --run autoconf
+AUTOMAKE = ${SHELL} /Users/simon/ytnef-lib/missing --run automake-1.6
+AUTOHEADER = ${SHELL} /Users/simon/ytnef-lib/missing --run autoheader
 
 am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd
 INSTALL = /usr/bin/install -c
@@ -60,18 +60,18 @@ NORMAL_UNINSTALL = :
 PRE_UNINSTALL = :
 POST_UNINSTALL = :
 host_alias = 
-host_triplet = x86_64-unknown-linux-gnu
+host_triplet = i386-apple-darwin13.1.0
 
 EXEEXT = 
 OBJEXT = o
 PATH_SEPARATOR = :
-AMTAR = ${SHELL} /vagrant/libytnef-1.5/missing --run tar
+AMTAR = ${SHELL} /Users/simon/ytnef-lib/missing --run tar
 AS = @AS@
-AWK = mawk
+AWK = awk
 CC = gcc
 DEPDIR = .deps
 DLLTOOL = @DLLTOOL@
-ECHO = echo
+ECHO = /bin/echo
 INSTALL_STRIP_PROGRAM = ${SHELL} $(install_sh) -c -s
 LIBTOOL = $(SHELL) $(top_builddir)/libtool
 LN_S = ln -s
@@ -82,7 +82,7 @@ STRIP = strip
 VERSION = 1.5
 am__include = include
 am__quote = 
-install_sh = /vagrant/libytnef-1.5/install-sh
+install_sh = /Users/simon/ytnef-lib/install-sh
 lib_LTLIBRARIES = libytnef.la
 
 libytnef_la_SOURCES = ytnef.c
