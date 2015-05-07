@@ -359,7 +359,7 @@ void TNEFFillMapi(TNEFStruct *TNEF, BYTE *data, DWORD size, MAPIProps *p) {
     
                 length = SwapDWord(d);
                 d+=sizeof(DWORD);
-                if (length > 0) {
+                if (length > 0 && length < 128000) {
                     mp->namedproperty = length;
                     mp->propnames = calloc(length, sizeof(variableLength));
                     while (length > 0) {
@@ -790,7 +790,7 @@ void TNEFInitialize(TNEFStruct *TNEF)
 #define FREEVARLENGTH(x) if ((x).size > 0) { \
                             free((x).data); (x).size =0; }
 void TNEFFree(TNEFStruct *TNEF) {
-    Attachment *p, *store;
+    /*Attachment *p, *store;
 
     FREEVARLENGTH(TNEF->from);
     FREEVARLENGTH(TNEF->subject);
@@ -809,22 +809,22 @@ void TNEFFree(TNEFStruct *TNEF) {
         store = p->next;
         free(p);
         p=store;
-    }
+    }*/
 }
 
 void TNEFFreeAttachment(Attachment *p)
 {
-    FREEVARLENGTH(p->Title);
+    /*FREEVARLENGTH(p->Title);
     FREEVARLENGTH(p->MetaFile);
     FREEVARLENGTH(p->TransportFilename);
     FREEVARLENGTH(p->FileData);
     FREEVARLENGTH(p->IconData);
-    TNEFFreeMapiProps(&(p->MAPI));
+    TNEFFreeMapiProps(&(p->MAPI));*/
 }
 
 void TNEFFreeMapiProps(MAPIProps *p)
 {
-    int i,j;
+    /*int i,j;
     for(i=0; i<p->count; i++) {
         for(j=0; j<p->properties[i].count; j++) {
             FREEVARLENGTH(p->properties[i].data[j]);
@@ -832,7 +832,7 @@ void TNEFFreeMapiProps(MAPIProps *p)
         free(p->properties[i].data);
     }
     free(p->properties);
-    p->count = 0;
+    p->count = 0;*/
 }
 #undef FREEVARLENGTH
 
